@@ -1,4 +1,4 @@
-Diferencias entre Inteligencia Artificial y Machine Learning:
+# Diferencias entre Inteligencia Artificial y Machine Learning:
 
 La Inteligencia Artificial (IA) es un campo amplio de la informática que busca desarrollar sistemas capaces de imitar o simular la inteligencia humana en aspectos como el razonamiento, la resolución de problemas, la percepción, el uso del lenguaje natural o la toma de decisiones. Su alcance es bastante general y abarca múltiples áreas, desde la robótica hasta el procesamiento de lenguaje y la visión por computadora. El objetivo de la IA es crear máquinas que actúen de forma similar a la inteligencia humana, incluso sin depender necesariamente de grandes cantidades de datos, como sucede en los sistemas expertos basados en reglas.
 
