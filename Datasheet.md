@@ -129,7 +129,24 @@ salida:
 Producto    object
 Precio       int64
 dtype: object
+# Cargar datos desde un archivo
+import pandas as pd
 
+df = pd.read_csv("datos.csv")
+print(df.head())
+
+data = {
+    "ID": [1, 2, 3],
+    "Nombre": ["Ana", "Luis", "Carlos"],
+    "Edad": [23, 30, 35],
+    "Ciudad": ["Bogotá", "Medellín", "Cali"]
+}
+df = pd.DataFrame(data)
+
+df.to_csv("datos.csv", index=False)
+
+df2 = pd.read_csv("datos.csv")
+print(df2)
 
 
 
