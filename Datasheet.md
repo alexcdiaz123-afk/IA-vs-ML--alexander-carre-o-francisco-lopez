@@ -130,6 +130,36 @@ Producto    object
 Precio       int64
 dtype: object
 
+# Cargar datos
+
+import pandas as pd
+
+data = {
+    "ID": [1, 2, 3],
+    "Nombre": ["Ana", "Luis", "Carlos"],
+    "Edad": [23, 30, 35],
+    "Ciudad": ["Bogotá", "Medellín", "Cali"]
+}
+df = pd.DataFrame(data)
+
+df.to_csv("datos.csv", index=False)
+
+df2 = pd.read_csv("datos.csv")
+print(df2)
+
+df = pd.read_csv("datos.csv")
+print(df.head())
+
+salida: 
+
+   ID  Nombre  Edad    Ciudad
+0   1     Ana    23    Bogotá
+1   2    Luis    30  Medellín
+2   3  Carlos    35      Cali
+   ID  Nombre  Edad    Ciudad
+0   1     Ana    23    Bogotá
+1   2    Luis    30  Medellín
+2   3  Carlos    35      Cali
 
 
 
