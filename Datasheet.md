@@ -197,6 +197,105 @@ Producto    object
 Precio       int64
 dtype: object
 
+# D) Pandas – Operaciones avanzadas en DataFrames (filtros, groupby, merge/join, manejo de valores nulos, exportación/importación).
+
+data ={
+    'Nombre': ['Ana', 'Luis'],
+    'Edad':  [20,45],
+    'Ciudad': ['Bogota','Chia'],
+    'Puntaje': [None, 70],
+}
+df= pd.DataFrame(data)
+print(df)
+
+salida:
+
+Nombre  Edad  Ciudad  Puntaje
+0    Ana    20  Bogota      NaN
+1   Luis    45    Chia     70.0
+
+# Nulos (isnull-fillna-dropna)
+
+
+print(df.isnull())
+
+
+df_sin_nulos = df.dropna()
+
+
+df_filled = df.fillna({
+    'Nombre': 'Desconocido',
+    'Edad': df['Edad'].mean(),
+    'Puntaje': df['Puntaje'].mean()
+})
+print(df_filled)
+
+salida:
+
+ Nombre   Edad  Ciudad  Puntajes
+0   False  False   False      True
+1   False  False   False     False
+  Nombre  Edad  Ciudad  Puntajes
+0    Ana    20  Bogota      70.0
+1   Luis    45    Chia      70.0
+
+# Filtros (loc, condicionales)
+
+
+filtro_puntaje = df_filled[df_filled['Puntajes'] > 50]
+print(filtro_puntaje)
+
+
+filtro_ciudad = df_filled[df_filled['Ciudad'] == 'Bogota']
+print(filtro_ciudad)
+
+salida: 
+
+Nombre  Edad  Ciudad  Puntajes
+0    Ana    20  Bogota      70.0
+1   Luis    45    Chia      70.0
+  Nombre  Edad  Ciudad  Puntajes
+0    Ana    20  Bogota      70.0
+
+# Agrupar datos Grouby
+
+grupo = df_filled.groupby('Ciudad')['Puntajes'].mean()
+print(grupo)
+
+salida: 
+
+Ciudad
+Bogota    70.0
+Chia      70.0
+Name: Puntajes, dtype: float64
+
+# Merge/ jois entre los DataFrames
+
+info_extra = pd.DataFrame({
+    'Ciudad': ['Madrid', 'Sevilla', 'Valencia'],
+    'Región': ['Centro', 'Sur', 'Este']
+})
+df_completo = pd.merge(df_filled, info_extra, on='Ciudad', how='left')
+print(df_completo)
+
+salida:
+
+Nombre  Edad  Ciudad  Puntajes Región
+0    Ana    20  Bogota      70.0    NaN
+1   Luis    45    Chia      70.0    NaN
+
+# Exportar he Imporar
+
+df_completo.to_csv('datos_exportados.csv', index=False)
+
+df_importado = pd.read_csv('datos_exportados.csv')
+print(df_importado)
+
+salida :
+
+Nombre  Edad  Ciudad  Puntajes  Región
+0    Ana    20  Bogota      70.0     NaN
+1   Luis    45    Chia      70.0     NaN
 
 
 
