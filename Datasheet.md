@@ -60,6 +60,73 @@ Suma: [5 7 9]
 Multiplicación: [ 4 10 18]
 Cuadrado: [1 4 9]
 
+# B)NumPy – Operaciones estadísticas y funciones avanzadas:
+import numpy as np
+# Estadistica (mean, std, sum)#
+matriz1 = np.array([2,2,2,2,2,3])
+
+mean = np.mean(matriz1)
+std = np.std(matriz1)
+sum = np.sum(matriz1)
+
+print("la media es", matriz1)
+print("la desviacion es ", std)
+print("la suma tota es ", sum)
+
+salida: 
+
+la media es [2 2 2 2 2 3]
+la desviacion es  0.3726779962499649
+la suma tota es  13
+
+# Range, linspace
+
+arange = np.arange(0,21,1)
+linspace = np.linspace(0,1,10)
+
+print("usando arange ", arange)
+print("usando linspace ", linspace)
+
+salida:
+
+usando arange  [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]
+usando linspace  [0.         0.11111111 0.22222222 0.33333333 0.44444444 0.55555556
+ 0.66666667 0.77777778 0.88888889 1.  
+
+ # Random
+random =np.random.rand(2,2)
+print("Una matriz random:\n", random)
+
+salida:
+
+Una matriz random:
+ [[0.66039606 0.02429358]
+ [0.23859785 0.80662667]]
+
+# Algebra lineal-Producto-Trasposicion-Inversa
+matrizA =np.array([[2,1],[3,3]])
+matrizB = np.array([[4,4],[8,8]])
+
+dot =np.dot(matrizA, matrizB)
+transpose = np.transpose(matrizB)
+linalg = np.linalg.inv(matrizA)
+
+print("El producto punto es\n ", dot)
+print("La transpuesta es\n ", transpose)
+print("La inversa es\n ", linalg)
+
+salida:
+
+El producto punto es
+  [[16 16]
+ [36 36]]
+La transpuesta es
+  [[4 8]
+ [4 8]]
+La inversa es
+  [[ 1.         -0.33333333]
+ [-1.          0.66666667]]
+
 # C) Pandas – Creación y manipulación de DataFrames y Series:
 
 # Crear una Serie:
@@ -129,8 +196,6 @@ salida:
 Producto    object
 Precio       int64
 dtype: object
-
-
 
 
 
