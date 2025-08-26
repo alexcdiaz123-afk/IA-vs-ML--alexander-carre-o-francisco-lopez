@@ -107,6 +107,28 @@ salida:
 1   Celular     800
 2   Tablet    1200
 
+# Seleccionar columnas:
+
+print("Columna Precio:")
+print(df["Precio"])
+
+salida:
+
+Columna  Precio:
+0        2000
+1        800
+2        1200
+Name: Precio, dtype: int64
+
+# Ver tipos de datos:
+
+print(df.dtypes)
+
+salida:
+
+Producto    object
+Precio       int64
+dtype: object
 
 
 
