@@ -30,5 +30,31 @@ Array reshapeado a 3x4:
  [ 4  5  6  7]
  [ 8  9 10 11]]
 
+ # Concatenar:
+
+ a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+concatenado = np.concatenate((a, b))
+print("Concatenación:", concatenado)
+
+salida:
+
+Concatenación: [1 2 3 4 5 6]
+
+ # Operaciones básicas:
+
+ x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+
+print("Suma:", x + y)
+print("Multiplicación:", x * y)
+print("Cuadrado:", x**2)
+
+salida:
+
+Suma: [5 7 9]
+Multiplicación: [ 4 10 18]
+Cuadrado: [1 4 9]
+
 
 
