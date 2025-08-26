@@ -196,7 +196,23 @@ salida:
 Producto    object
 Precio       int64
 dtype: object
+# Cargar datos desde un archivo
+import pandas as pd
 
+df = pd.read_csv("datos.csv")
+print(df.head())
+
+data = {
+    "ID": [1, 2, 3],
+    "Nombre": ["Ana", "Luis", "Carlos"],
+    "Edad": [23, 30, 35],
+    "Ciudad": ["Bogotá", "Medellín", "Cali"]
+}
+df = pd.DataFrame(data)
+
+df.to_csv("datos.csv", index=False)
+
+B)NumPy-–-Operaciones-estadísticas-y-funciones-avanzadas
 # D) Pandas – Operaciones avanzadas en DataFrames (filtros, groupby, merge/join, manejo de valores nulos, exportación/importación).
 
 data ={
@@ -290,6 +306,10 @@ df_completo.to_csv('datos_exportados.csv', index=False)
 
 df_importado = pd.read_csv('datos_exportados.csv')
 print(df_importado)
+=======
+df2 = pd.read_csv("datos.csv")
+print(df2)
+main
 
 salida :
 
